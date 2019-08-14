@@ -2,7 +2,7 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-package main
+package ltcd
 
 import (
 	"fmt"
@@ -15,9 +15,9 @@ import (
 	"runtime/debug"
 	"runtime/pprof"
 
-	"github.com/ltcsuite/ltcd/blockchain/indexers"
-	"github.com/ltcsuite/ltcd/database"
-	"github.com/ltcsuite/ltcd/limits"
+	"github.com/ellcrys/ltcd/blockchain/indexers"
+	"github.com/ellcrys/ltcd/database"
+	"github.com/ellcrys/ltcd/limits"
 )
 
 const (
@@ -29,6 +29,7 @@ const (
 
 var (
 	cfg *config
+	svr *server
 )
 
 // winServiceMain is only invoked on Windows.  It detects when ltcd is running
@@ -40,7 +41,8 @@ var winServiceMain func() (bool, error)
 // optional serverChan parameter is mainly used by the service code to be
 // notified with the server once it is setup so it can gracefully stop it when
 // requested from the service control manager.
-func ltcdMain(serverChan chan<- *server) error {
+// The argument 'status' is used to inform the caller about errors.
+func ltcdMain(serverChan chan<- *server, interrupt chan struct{}, status chan error) error {
 	// Load configuration and parse command line.  This function also
 	// initializes logging and configures it accordingly.
 	tcfg, _, err := loadConfig()
@@ -57,7 +59,7 @@ func ltcdMain(serverChan chan<- *server) error {
 	// Get a channel that will be closed when a shutdown signal has been
 	// triggered either from an OS signal such as SIGINT (Ctrl+C) or from
 	// another subsystem such as the RPC server.
-	interrupt := interruptListener()
+	// interrupt := interruptListener()
 	defer ltcdLog.Info("Shutdown complete")
 
 	// Show version at startup.
@@ -164,11 +166,23 @@ func ltcdMain(serverChan chan<- *server) error {
 		serverChan <- server
 	}
 
+	if status != nil {
+		status <- nil
+	}
+
+	svr = server
+
 	// Wait until the interrupt signal is received from an OS signal or
 	// shutdown is requested through one of the subsystems such as the RPC
 	// server.
 	<-interrupt
+
 	return nil
+}
+
+// IsRPCOn checks whether the RPC server is on
+func IsRPCOn() bool {
+	return svr.rpcServer != nil && svr.rpcServer.started == int32(1)
 }
 
 // removeRegressionDB removes the existing regression test database if running
@@ -296,9 +310,13 @@ func loadBlockDB() (database.DB, error) {
 	return db, nil
 }
 
-func main() {
+// Main starts the LTC node.
+// We made it a public method so we can call from other packages.
+// The argument 'status' is used to inform the caller about errors.
+func Main(osInterrupt chan struct{}, status chan error) error {
+
 	// Use all processor cores.
-	runtime.GOMAXPROCS(runtime.NumCPU())
+	// runtime.GOMAXPROCS(runtime.NumCPU())
 
 	// Block and transaction processing can cause bursty allocations.  This
 	// limits the garbage collector from excessively overallocating during
@@ -309,7 +327,8 @@ func main() {
 	// Up some limits.
 	if err := limits.SetLimits(); err != nil {
 		fmt.Fprintf(os.Stderr, "failed to set limits: %v\n", err)
-		os.Exit(1)
+		status <- err
+		return err
 	}
 
 	// Call serviceMain on Windows to handle running as a service.  When
@@ -318,16 +337,22 @@ func main() {
 	if runtime.GOOS == "windows" {
 		isService, err := winServiceMain()
 		if err != nil {
-			fmt.Println(err)
-			os.Exit(1)
+			status <- err
+			return err
 		}
 		if isService {
-			os.Exit(0)
+			status <- err
+			return err
 		}
 	}
 
-	// Work around defer not working after os.Exit()
-	if err := ltcdMain(nil); err != nil {
-		os.Exit(1)
+	if err := ltcdMain(nil, osInterrupt, status); err != nil {
+		status <- err
+		return err
 	}
+
+	// Return nil since graceful shutdown was achieved
+	status <- nil
+
+	return nil
 }
