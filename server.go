@@ -3,7 +3,7 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-package main
+package ltcd
 
 import (
 	"bytes"
@@ -22,22 +22,22 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ltcsuite/ltcd/addrmgr"
-	"github.com/ltcsuite/ltcd/blockchain"
-	"github.com/ltcsuite/ltcd/blockchain/indexers"
-	"github.com/ltcsuite/ltcd/chaincfg"
-	"github.com/ltcsuite/ltcd/chaincfg/chainhash"
-	"github.com/ltcsuite/ltcd/connmgr"
-	"github.com/ltcsuite/ltcd/database"
-	"github.com/ltcsuite/ltcd/mempool"
-	"github.com/ltcsuite/ltcd/mining"
-	"github.com/ltcsuite/ltcd/mining/cpuminer"
-	"github.com/ltcsuite/ltcd/netsync"
-	"github.com/ltcsuite/ltcd/peer"
-	"github.com/ltcsuite/ltcd/txscript"
-	"github.com/ltcsuite/ltcd/wire"
-	"github.com/ltcsuite/ltcutil"
-	"github.com/ltcsuite/ltcutil/bloom"
+	"github.com/ellcrys/ltcd/addrmgr"
+	"github.com/ellcrys/ltcd/blockchain"
+	"github.com/ellcrys/ltcd/blockchain/indexers"
+	"github.com/ellcrys/ltcd/chaincfg"
+	"github.com/ellcrys/ltcd/chaincfg/chainhash"
+	"github.com/ellcrys/ltcd/connmgr"
+	"github.com/ellcrys/ltcd/database"
+	"github.com/ellcrys/ltcd/mempool"
+	"github.com/ellcrys/ltcd/mining"
+	"github.com/ellcrys/ltcd/mining/cpuminer"
+	"github.com/ellcrys/ltcd/netsync"
+	"github.com/ellcrys/ltcd/peer"
+	"github.com/ellcrys/ltcd/txscript"
+	"github.com/ellcrys/ltcd/wire"
+	"github.com/ellcrys/ltcutil"
+	"github.com/ellcrys/ltcutil/bloom"
 )
 
 const (

@@ -5,7 +5,7 @@ chaincfg
 (https://travis-ci.org/ltcsuite/ltcd) [![ISC License]
 (http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)]
-(http://godoc.org/github.com/ltcsuite/ltcd/chaincfg)
+(http://godoc.org/github.com/ellcrys/ltcd/chaincfg)
 
 Package chaincfg defines chain configuration parameters for the three standard
 Bitcoin networks and provides the ability for callers to define their own custom
@@ -19,15 +19,15 @@ define their own network.
 ## Sample Use
 
 ```Go
-package main
+package ltcd
 
 import (
 	"flag"
 	"fmt"
 	"log"
 
-	"github.com/ltcsuite/ltcutil"
-	"github.com/ltcsuite/ltcd/chaincfg"
+	"github.com/ellcrys/ltcutil"
+	"github.com/ellcrys/ltcd/chaincfg"
 )
 
 var testnet = flag.Bool("testnet", false, "operate on the testnet Bitcoin network")
@@ -58,7 +58,7 @@ func main() {
 ## Installation and Updating
 
 ```bash
-$ go get -u github.com/ltcsuite/ltcd/chaincfg
+$ go get -u github.com/ellcrys/ltcd/chaincfg
 ```
 
 ## GPG Verification Key

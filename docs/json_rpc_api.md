@@ -1091,11 +1091,11 @@ a ltcd instance via Websockets, issues [getblockcount](#getblockcount) to
 retrieve the current block height, and displays it.
 
 ```Go
-package main
+package ltcd
 
 import (
 	"github.com/btcsuite/btcrpcclient"
-	"github.com/ltcsuite/ltcutil"
+	"github.com/ellcrys/ltcutil"
 	"io/ioutil"
 	"log"
 	"path/filepath"
@@ -1152,13 +1152,13 @@ a ltcd instance via Websockets, issues [getblock](#getblock) to retrieve
 information about the Genesis block, and display a few details about it.
 
 ```Go
-package main
+package ltcd
 
 import (
 	"github.com/btcsuite/btcrpcclient"
-	"github.com/ltcsuite/ltcutil"
-	"github.com/ltcsuite/ltcd/chaincfg/chainhash"
-	"github.com/ltcsuite/ltcd/wire"
+	"github.com/ellcrys/ltcutil"
+	"github.com/ellcrys/ltcd/chaincfg/chainhash"
+	"github.com/ellcrys/ltcd/wire"
 	"io/ioutil"
 	"log"
 	"path/filepath"
@@ -1244,13 +1244,13 @@ notifications with [notifyblocks](#notifyblocks).  It also sets up handlers for
 the notifications.
 
 ```Go
-package main
+package ltcd
 
 import (
 	"github.com/btcsuite/btcrpcclient"
-	"github.com/ltcsuite/ltcutil"
-	"github.com/ltcsuite/ltcd/chaincfg/chainhash"
-	"github.com/ltcsuite/ltcd/wire"
+	"github.com/ellcrys/ltcutil"
+	"github.com/ellcrys/ltcd/chaincfg/chainhash"
+	"github.com/ellcrys/ltcd/wire"
 	"io/ioutil"
 	"log"
 	"path/filepath"

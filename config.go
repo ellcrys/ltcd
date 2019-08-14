@@ -2,7 +2,7 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-package main
+package ltcd
 
 import (
 	"bufio"
@@ -20,15 +20,15 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ltcsuite/ltcd/blockchain"
-	"github.com/ltcsuite/ltcd/chaincfg"
-	"github.com/ltcsuite/ltcd/chaincfg/chainhash"
-	"github.com/ltcsuite/ltcd/connmgr"
-	"github.com/ltcsuite/ltcd/database"
-	_ "github.com/ltcsuite/ltcd/database/ffldb"
-	"github.com/ltcsuite/ltcd/mempool"
-	"github.com/ltcsuite/ltcd/peer"
-	"github.com/ltcsuite/ltcutil"
+	"github.com/ellcrys/ltcd/blockchain"
+	"github.com/ellcrys/ltcd/chaincfg"
+	"github.com/ellcrys/ltcd/chaincfg/chainhash"
+	"github.com/ellcrys/ltcd/connmgr"
+	"github.com/ellcrys/ltcd/database"
+	_ "github.com/ellcrys/ltcd/database/ffldb"
+	"github.com/ellcrys/ltcd/mempool"
+	"github.com/ellcrys/ltcd/peer"
+	"github.com/ellcrys/ltcutil"
 	"github.com/btcsuite/go-socks/socks"
 	flags "github.com/jessevdk/go-flags"
 )

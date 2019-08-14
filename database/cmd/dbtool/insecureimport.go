@@ -2,7 +2,7 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-package main
+package ltcd
 
 import (
 	"encoding/binary"
@@ -12,10 +12,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ltcsuite/ltcd/chaincfg/chainhash"
-	"github.com/ltcsuite/ltcd/database"
-	"github.com/ltcsuite/ltcd/wire"
-	"github.com/ltcsuite/ltcutil"
+	"github.com/ellcrys/ltcd/chaincfg/chainhash"
+	"github.com/ellcrys/ltcd/database"
+	"github.com/ellcrys/ltcd/wire"
+	"github.com/ellcrys/ltcutil"
 )
 
 // importCmd defines the configuration options for the insecureimport command.

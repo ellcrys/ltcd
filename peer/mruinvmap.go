@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/ltcsuite/ltcd/wire"
+	"github.com/ellcrys/ltcd/wire"
 )
 
 // mruInventoryMap provides a concurrency safe map that is limited to a maximum

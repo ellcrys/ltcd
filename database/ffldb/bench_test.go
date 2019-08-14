@@ -9,9 +9,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/ltcsuite/ltcd/chaincfg"
-	"github.com/ltcsuite/ltcd/database"
-	"github.com/ltcsuite/ltcutil"
+	"github.com/ellcrys/ltcd/chaincfg"
+	"github.com/ellcrys/ltcd/database"
+	"github.com/ellcrys/ltcutil"
 )
 
 // BenchmarkBlockHeader benchmarks how long it takes to load the mainnet genesis

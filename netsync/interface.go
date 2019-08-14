@@ -5,13 +5,13 @@
 package netsync
 
 import (
-	"github.com/ltcsuite/ltcd/blockchain"
-	"github.com/ltcsuite/ltcd/chaincfg"
-	"github.com/ltcsuite/ltcd/chaincfg/chainhash"
-	"github.com/ltcsuite/ltcd/mempool"
-	"github.com/ltcsuite/ltcd/peer"
-	"github.com/ltcsuite/ltcd/wire"
-	"github.com/ltcsuite/ltcutil"
+	"github.com/ellcrys/ltcd/blockchain"
+	"github.com/ellcrys/ltcd/chaincfg"
+	"github.com/ellcrys/ltcd/chaincfg/chainhash"
+	"github.com/ellcrys/ltcd/mempool"
+	"github.com/ellcrys/ltcd/peer"
+	"github.com/ellcrys/ltcd/wire"
+	"github.com/ellcrys/ltcutil"
 )
 
 // PeerNotifier exposes methods to notify peers of status changes to

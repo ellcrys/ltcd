@@ -2,12 +2,12 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-package main
+package ltcd
 
 import (
 	"log"
 
-	"github.com/ltcsuite/ltcd/rpcclient"
+	"github.com/ellcrys/ltcd/rpcclient"
 )
 
 func main() {

@@ -2,7 +2,7 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-package main
+package ltcd
 
 import (
 	"io/ioutil"
@@ -10,8 +10,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/ltcsuite/ltcd/rpcclient"
-	"github.com/ltcsuite/ltcutil"
+	"github.com/ellcrys/ltcd/rpcclient"
+	"github.com/ellcrys/ltcutil"
 	"github.com/davecgh/go-spew/spew"
 )
 

@@ -9,9 +9,9 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/ltcsuite/ltcd/chaincfg/chainhash"
-	"github.com/ltcsuite/ltcd/txscript"
-	"github.com/ltcsuite/ltcutil"
+	"github.com/ellcrys/ltcd/chaincfg/chainhash"
+	"github.com/ellcrys/ltcd/txscript"
+	"github.com/ellcrys/ltcutil"
 )
 
 const (

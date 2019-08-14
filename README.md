@@ -39,7 +39,7 @@ which are both under active development.
 
 #### Windows - MSI Available
 
-https://github.com/ltcsuite/ltcd/releases
+https://github.com/ellcrys/ltcd/releases
 
 #### Linux/BSD/MacOSX/POSIX - Build from Source
 
@@ -61,7 +61,7 @@ recommended that `GOPATH` is set to a directory in your home directory such as
 - Run the following commands to obtain ltcd, all dependencies, and install it:
 
 ```bash
-$ cd $GOPATH/src/github.com/ltcsuite/ltcd
+$ cd $GOPATH/src/github.com/ellcrys/ltcd
 $ GO111MODULE=on go install -v . ./cmd/...
 ```
 
@@ -80,7 +80,7 @@ Install a newer MSI
 - Run the following commands to update ltcd, all dependencies, and install it:
 
 ```bash
-$ cd $GOPATH/src/github.com/ltcsuite/ltcd
+$ cd $GOPATH/src/github.com/ellcrys/ltcd
 $ git pull
 $ GO111MODULE=on go install -v . ./cmd/...
 ```
@@ -109,12 +109,12 @@ $ ./ltcd
 
 ## Issue Tracker
 
-The [integrated github issue tracker](https://github.com/ltcsuite/ltcd/issues)
+The [integrated github issue tracker](https://github.com/ellcrys/ltcd/issues)
 is used for this project.
 
 ## Documentation
 
-The documentation is a work-in-progress.  It is located in the [docs](https://github.com/ltcsuite/ltcd/tree/master/docs) folder.
+The documentation is a work-in-progress.  It is located in the [docs](https://github.com/ellcrys/ltcd/tree/master/docs) folder.
 
 ## GPG Verification Key
 

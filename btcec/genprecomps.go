@@ -7,7 +7,7 @@
 // tables used to accelerate operations.
 // +build ignore
 
-package main
+package ltcd
 
 import (
 	"bytes"
@@ -17,7 +17,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/ltcsuite/ltcd/btcec"
+	"github.com/ellcrys/ltcd/btcec"
 )
 
 func main() {

@@ -3,7 +3,7 @@ wire
 
 [![Build Status](http://img.shields.io/travis/ltcsuite/ltcd.svg)](https://travis-ci.org/ltcsuite/ltcd)
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
-[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/ltcsuite/ltcd/wire)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/ellcrys/ltcd/wire)
 =======
 
 Package wire implements the bitcoin wire protocol.  A comprehensive suite of
@@ -19,7 +19,7 @@ protocol level.
 ## Installation and Updating
 
 ```bash
-$ go get -u github.com/ltcsuite/ltcd/wire
+$ go get -u github.com/ellcrys/ltcd/wire
 ```
 
 ## Bitcoin Message Overview

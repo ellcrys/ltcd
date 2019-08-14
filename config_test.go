@@ -1,4 +1,4 @@
-package main
+package ltcd
 
 import (
 	"io/ioutil"

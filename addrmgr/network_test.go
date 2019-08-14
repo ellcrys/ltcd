@@ -8,8 +8,8 @@ import (
 	"net"
 	"testing"
 
-	"github.com/ltcsuite/ltcd/addrmgr"
-	"github.com/ltcsuite/ltcd/wire"
+	"github.com/ellcrys/ltcd/addrmgr"
+	"github.com/ellcrys/ltcd/wire"
 )
 
 // TestIPTypes ensures the various functions which determine the type of an IP

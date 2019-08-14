@@ -18,15 +18,15 @@
 // When a network parameter is needed, it may then be looked up through this
 // variable (either directly, or hidden in a library call).
 //
-//  package main
+//  package ltcd
 //
 //  import (
 //          "flag"
 //          "fmt"
 //          "log"
 //
-//          "github.com/ltcsuite/ltcutil"
-//          "github.com/ltcsuite/ltcd/chaincfg"
+//          "github.com/ellcrys/ltcutil"
+//          "github.com/ellcrys/ltcd/chaincfg"
 //  )
 //
 //  var testnet = flag.Bool("testnet", false, "operate on the testnet Bitcoin network")

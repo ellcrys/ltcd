@@ -2,7 +2,7 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-package main
+package ltcd
 
 import (
 	"os"
@@ -10,7 +10,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/ltcsuite/ltcd/database"
+	"github.com/ellcrys/ltcd/database"
 	"github.com/btcsuite/btclog"
 	flags "github.com/jessevdk/go-flags"
 )
